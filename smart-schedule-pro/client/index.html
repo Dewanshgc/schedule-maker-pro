@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Smart Schedule Pro</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="styles.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+
+<div id="authSection">
+<h2>Login / Register</h2>
+<input id="name" placeholder="Name">
+<input id="email" placeholder="Email">
+<input id="password" type="password" placeholder="Password">
+<button onclick="register()">Register</button>
+<button onclick="login()">Login</button>
+</div>
+
+<div id="appSection" style="display:none;">
+<button onclick="toggleTheme()">Toggle Theme</button>
+<h1>Dashboard</h1>
+
+<div class="stats">
+<canvas id="weeklyRing"></canvas>
+<canvas id="trendChart"></canvas>
+</div>
+
+<div id="calendar"></div>
+
+<button onclick="exportExcel()">Export Excel</button>
+<button onclick="exportPDF()">Export PDF</button>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
